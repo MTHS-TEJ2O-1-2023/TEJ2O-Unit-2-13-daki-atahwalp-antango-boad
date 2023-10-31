@@ -17,8 +17,11 @@ input.onButtonPressed(Button.A, function () {
   while (countDown > -1) {
     basic.showNumber(countDown)
     countDown --
+    neopixelStrip.setPixelColor(countDown, NeoPixelColors.Black)
+    neopixelStrip.show()
 }
-
+  
+  neopixelStrip.show()
 })
 
 // on button B, clearing screen
