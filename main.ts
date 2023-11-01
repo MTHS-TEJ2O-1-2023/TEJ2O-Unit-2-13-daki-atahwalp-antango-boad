@@ -7,7 +7,7 @@
 
 // variables
 let neopixelStrip: neopixel.Strip = null
-let countDown : number = 4
+let countDown: number = 4
 
 // start up
 basic.clearScreen()
@@ -21,12 +21,12 @@ basic.showIcon(IconNames.Happy)
 
 // on button A, counting down
 input.onButtonPressed(Button.A, function () {
-  while (countDown >= 0) {
+  while (countDown > -1) {
     basic.showNumber(countDown)
-    countDown --
+    countDown--
     neopixelStrip.setPixelColor(countDown, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.show()
-}
+  }
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
