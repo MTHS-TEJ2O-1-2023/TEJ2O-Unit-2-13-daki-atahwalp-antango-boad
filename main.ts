@@ -2,25 +2,35 @@
  *
  * Created by: Daki A.B
  * Created on: Oct 2023
- * This program counts down
+ * This program counts down from 4 with neopixels
 */
 
 // variables
+let neopixelStrip: neopixel.Strip = null
 let countDown : number = 4
-let neopixelStrip : neopixel.Strip = null
 
 // start up
 basic.clearScreen()
+neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Violet))
+neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Violet))
+neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Violet))
+neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Violet))
+neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
+// on button A, counting down
 input.onButtonPressed(Button.A, function () {
-  while (countDown > -1) {
+  while (countDown >= 0) {
     basic.showNumber(countDown)
     countDown --
-    neopixelStrip.setPixelColor(countDown, NeoPixelColors.Black)
+    neopixelStrip.setPixelColor(countDown, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.show()
 }
-  
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
   neopixelStrip.show()
 })
 
