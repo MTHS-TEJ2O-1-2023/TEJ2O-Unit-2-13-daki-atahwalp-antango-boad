@@ -27,6 +27,7 @@ input.onButtonPressed(Button.A, function () {
   neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Purple))
   neopixelStrip.show()
 
+  // setting countDown value
   countDown = 4
 
   while (countDown > -1) {
