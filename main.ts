@@ -19,13 +19,16 @@ neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
-// on button A, counting down
+// on button A, start counting down
 input.onButtonPressed(Button.A, function () {
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Purple))
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Purple))
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Purple))
   neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Purple))
   neopixelStrip.show()
+
+  // setting countDown value
+  countDown = 4
 
   while (countDown > -1) {
     basic.showNumber(countDown)
@@ -34,11 +37,5 @@ input.onButtonPressed(Button.A, function () {
     neopixelStrip.setPixelColor(countDown, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.show()
   }
-  basic.showIcon(IconNames.Happy)
-})
-
-// on button B, clearing screen
-input.onButtonPressed(Button.B, function () {
-  basic.clearScreen()
   basic.showIcon(IconNames.Happy)
 })
